@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title Login Page
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap', rel='stylesheet')
+  body
+    .login-container
+      .login-header
+        h1 ระบบจัดการข้อมูล COdaily
+        img(src='/images/logo.png', alt='C0daily Logo', style='width: 200px; height: auto;')
+      .login-form
+        form(action='/login', method='post')
+          .form-group
+            label(for='username') User
+            input#username(type='text', name='username', required=true)
+          .form-group
+            label(for='password') Password
+            input#password(type='password', name='password', required=true)
+          .form-actions
+            button(type='submit') Login

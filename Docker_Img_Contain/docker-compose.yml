@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: newsroot123456
+    networks:
+      - mynetwork
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_ARBITRARY: 1
+    ports:
+      - "8080:80"
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
