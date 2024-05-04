@@ -23,6 +23,8 @@ var workStatusDetailRouter = require('./routes/work_status_detail');
 
 var app = express();
 
+app.use(express.json());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
