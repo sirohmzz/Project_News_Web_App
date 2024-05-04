@@ -8,13 +8,36 @@ var connection = require('./database');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
-
+var categoryRouter = require('./routes/category');
+var memberRouter = require('./routes/member');
+var majorRouter = require('./routes/major'); 
+var favoriteCategoryRouter = require('./routes/favorite_category'); 
+var newsRatingRouter = require('./routes/news_rating'); 
+var pictureRouter = require('./routes/picture'); 
+var readHistoryRouter = require('./routes/read_history'); 
+var readLaterRouter = require('./routes/read_later'); 
+var subCategoryRouter = require('./routes/sub_category'); 
+var totalReadRouter = require('./routes/total_read'); 
+var workStatusRouter = require('./routes/work_status'); 
+var workStatusDetailRouter = require('./routes/work_status_detail'); 
 
 var app = express();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/category', categoryRouter);
+app.use('/member', memberRouter);
+app.use('/major', majorRouter);
+app.use('/favorite_category', favoriteCategoryRouter);
+app.use('/news_rating', newsRatingRouter);
+app.use('/picture', pictureRouter);
+app.use('/read_history', readHistoryRouter);
+app.use('/read_later', readLaterRouter);
+app.use('/sub_category', subCategoryRouter);
+app.use('/total_read', totalReadRouter);
+app.use('/work_status', workStatusRouter);
+app.use('/work_status_detail', workStatusDetailRouter);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
