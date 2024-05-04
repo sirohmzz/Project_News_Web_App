@@ -20,6 +20,8 @@ var subCategoryRouter = require('./routes/sub_category');
 var totalReadRouter = require('./routes/total_read'); 
 var workStatusRouter = require('./routes/work_status'); 
 var workStatusDetailRouter = require('./routes/work_status_detail'); 
+var newsRouter = require('./routes/news'); 
+
 
 var app = express();
 
@@ -40,6 +42,8 @@ app.use('/sub_category', subCategoryRouter);
 app.use('/total_read', totalReadRouter);
 app.use('/work_status', workStatusRouter);
 app.use('/work_status_detail', workStatusDetailRouter);
+app.use('/news', newsRouter);
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
